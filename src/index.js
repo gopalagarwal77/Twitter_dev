@@ -14,7 +14,7 @@ app.listen(3000, async () => {
       content :'Third  name',
      // userEmail:'abc@gmail.com'
     }); */
-    const tweetRepo=new TweetRepository();
+  //  const tweetRepo=new TweetRepository();
     /* const tweet =await tweetRepo.update('64cfdff0384a4fb3a11efe14',
     {
         content :'latest tweet'
@@ -23,7 +23,10 @@ app.listen(3000, async () => {
     tweet.comments.push({content:'first commnet'});
     await tweet.save();*/
     //const tweet=await tweetRepo.getWithComments('64cf8c0fb7aeb8de33cb1e6e');
-   const tweet=await tweetRepo.getAll(0,4);
-    console.log(tweet[0].contentWithEmail);
+    const tweetRepo=new TweetRepository();
+   const tweet= await tweetRepo.create({content: 'with hooks now'});
+   consoloe.log(tweet);
+   //const tweet=await tweetRepo.getAll(0,4);
+   // console.log(tweet[0].contentWithEmail);
 
 });    
